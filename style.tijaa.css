@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    width: min(90%, 1120px);
+    margin-inline: auto;
+}
+
+header {
+    background-color: #fafaf6;
+    height: 4.475rem;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.desktop-menu {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.menu-link {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-link li {
+    list-style: none;
+}
+
+.menu-link a {
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: rgb(43, 43, 43);
+}
+
+.menu-link a:hover {
+    color: rgb(95, 106, 212);
+}
+
+.desktop-menu h1 {
+    font-size: 1.5625rem;
+    font-weight: 700;
+}
+
+.hamburger {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    background-color: #5f6ad4;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.25rem;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.hero {
+    height: calc(100vh - 4.475rem);
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(251,15,63,0.3)), url('https://mobirise.com/extensions/retreatm5/outdoor-yoga-classes/assets/images/pexels-min-an-1234035.jpg') bottom/cover no-repeat;
+    display: flex;
+}
+
+.hero .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 400;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.yoga {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(221, 141, 125, 0.4)), 
+                url('https://mobirise.com/extensions/retreatm5/outdoor-yoga-classes/assets/images/pexels-lucas-pezeta-2121066.jpg') 
+                center/cover no-repeat;
+    height: 90vh;
+    margin-top: 6rem;
+    border-radius: 25px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.yoga .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 728px;
+    margin-inline: auto;
+    color: white;
+    margin-bottom: 7rem;
+}
+
+.yoga .content h1 {
+    font-size: 3.125rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.yoga .content p {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* tablet and mobile phones */
+@media(max-width: 768px) { 
+    .desktop-menu {
+        display: none; 
+    }
+
+    header {
+        height: 4.475rem; /* Dib u soo celi header-ka mobile-ka */
+    }
+
+    .hamburger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 15px;
+        right: 7%;
+        border-radius: 50%;
+        background-color: #5f6ad4;
+        color: white;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        z-index: 1111;
+    }
+
+    .mobile-menu {
+        display: flex;
+        position: fixed;
+        background-color: #2b2b2b;
+        inset: 0;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        transform: translateX(0%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1100;
+    }
+
+    .mobile-menu[data-visible="false"] {
+        transform: translateX(100%);
+    }
+
+    .mobile-menu .navigation {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+        width: 80%;
+    }
+
+    .mobile-menu h1 {
+        font-size: 2.3125rem;
+        font-weight: 700;
+        border-bottom: 1px solid white;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+}

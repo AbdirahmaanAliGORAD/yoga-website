@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga redesign website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .mobile-menu[data-visible="false"] { display: none; }
+    .mobile-menu[data-visible="true"] { display: block; }
+    .hamburger i[data-visible="false"] { display: none; }
+    .hamburger i[data-visible="true"] { display: inline-block; }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- hamburger -->
+    <div class="hamburger">
+      <i class="fa-solid fa-bars" data-visible="true"></i>
+      <i class="fa-solid fa-xmark" data-visible="false"></i>
+    </div>
+
+    <!-- desktop menu -->
+    <nav class="container desktop-menu">
+      <ul id="left-menu" class="menu-link">
+        <li><a href="#">our philosophy</a></li>
+        <li><a href="#">Houses</a></li>
+        <li><a href="#">Map</a></li>
+      </ul>
+      <h1>RetreatM5</h1>
+      <ul id="rght-menu" class="menu-link">
+        <li><a href="#">leisur</a></li>
+        <li><a href="#">How to get there</a></li>
+        <li><a href="#">contacts</a></li>
+      </ul>
+    </nav>
+
+    <!-- mobile menu -->
+    <nav class="mobile-menu" data-visible="false">
+      <div class="navigation">
+        <h1>RetreatM5</h1>
+        <ul class="menu-link">
+          <li><a href="#">our philosophy</a></li>
+          <li><a href="#">Houses</a></li>
+          <li><a href="#">Map</a></li>
+          <li><a href="#">leisur</a></li>
+          <li><a href="#">How to get there</a></li>
+          <li><a href="#">contacts</a></li>
+        </ul>
+        <div class="mobile-menu-action">
+          <a href="#" class="btn-primary">Book a room</a>
+          <a href="#" class="btn-secondary">Write to us</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const icons = document.querySelectorAll(".hamburger i");
+
+    hamburger.addEventListener("click", function () {
+      const isVisible = mobileMenu.getAttribute('data-visible');
+      if (isVisible === "true") {
+        mobileMenu.setAttribute('data-visible', "false");
+        icons[0].setAttribute('data-visible', "true");
+        icons[1].setAttribute('data-visible', "false");
+      } else {
+        mobileMenu.setAttribute('data-visible', "true");
+        icons[0].setAttribute('data-visible', "false");
+        icons[1].setAttribute('data-visible', "true");
+      }
+    });
+  </script>
+</body>
+</html>
